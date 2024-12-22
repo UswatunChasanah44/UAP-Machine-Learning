@@ -12,7 +12,3 @@ Proyek ini menggunakan dua model deep learning utama untuk tugas klasifikasi gam
 1. **Convolutional Neural Network (CNN):**  
    CNN adalah model jaringan saraf yang dirancang khusus untuk pemrosesan data berbentuk gambar. CNN digunakan untuk mengekstraksi fitur penting dari gambar makanan tradisional Nusantara, seperti tekstur, warna, dan pola, sehingga model dapat mengenali dan membedakan kategori makanan secara akurat.
 
-2. **Residual Network (ResNet):**  
-   ResNet merupakan model jaringan saraf yang lebih dalam dibandingkan CNN standar, dengan fitur utama berupa residual connections. Fitur ini memungkinkan pelatihan jaringan yang lebih efisien dan mencegah masalah vanishing gradient pada jaringan yang dalam. Dalam proyek ini, ResNet digunakan untuk meningkatkan akurasi klasifikasi gambar dengan menangkap fitur visual yang lebih kompleks.
-
-Penggunaan kedua model ini bertujuan untuk membandingkan performa antara CNN dan ResNet dalam mengklasifikasikan makanan tradisional Nusantara. Hasil perbandingan mencakup metrik seperti akurasi, loss, dan waktu pelatihan, yang akan dianalisis untuk menentukan model terbaik.
