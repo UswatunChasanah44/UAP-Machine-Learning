@@ -10,5 +10,5 @@ Project *klasifikasi makanan tradisional Indonesia* bertujuan untuk melestarikan
 Proyek ini menggunakan dua model deep learning utama untuk tugas klasifikasi gambar, yaitu:
 
 1. **Convolutional Neural Network (CNN):**  
-   CNN adalah model jaringan saraf yang dirancang khusus untuk pemrosesan data berbentuk gambar. CNN digunakan untuk mengekstraksi fitur penting dari gambar makanan tradisional Nusantara, seperti tekstur, warna, dan pola, sehingga model dapat mengenali dan membedakan kategori makanan secara akurat.
+CNN adalah model jaringan saraf yang dirancang khusus untuk pemrosesan data berbentuk gambar. CNN digunakan untuk mengekstraksi fitur penting dari gambar makanan tradisional Nusantara, seperti tekstur, warna, dan pola, sehingga model dapat mengenali dan membedakan kategori makanan secara akurat.
 
