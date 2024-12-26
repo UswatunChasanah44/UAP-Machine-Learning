@@ -139,6 +139,13 @@ Secara keseluruhan, model ini sangat andal untuk klasifikasi makanan tradisional
 
 ## Tampilan Web Klasifikasi 🌻
 
+![image](https://github.com/user-attachments/assets/188e2324-341c-41ec-8335-11273bbbf41e)
+
+
+![image](https://github.com/user-attachments/assets/e2362f48-ac41-409e-9c04-753ea932081b)
+
+
+
 
 
 
