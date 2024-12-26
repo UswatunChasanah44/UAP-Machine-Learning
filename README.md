@@ -1,4 +1,4 @@
-# Analisis Kinerja Model CNN dan MobileNet untuk Klasifikasi Citra Makanan Tradisional Nusantara
+# Analisis Kinerja Model CNN dan MobileNet untuk Klasifikasi Citra Makanan Tradisional Nusantara 🥘🎉
 
 ## Overview Project
 Project *klasifikasi makanan tradisional Indonesia* bertujuan untuk melestarikan kekayaan kuliner sebagai bagian dari warisan budaya, sekaligus mendukung digitalisasi dan pengembangan teknologi di bidang kuliner. Model ini membantu mendokumentasikan dan mengenali ragam makanan tradisional secara akurat, mempermudah akses informasi, serta mendukung promosi kuliner lokal dalam sektor pariwisata dan ekonomi, termasuk pemberdayaan UMKM. 
@@ -22,6 +22,132 @@ Proyek ini menggunakan dua model klasifikasi gambar, yaitu:
 Dataset yang digunakan dalam klasifikasi terdiri dari 9.098 image dan telah terbagi ke dalam file train, validation, dan test. Terdapat 5 label yaitu '_Bakso_','_Gudeg_', '_Rendang_', '_Gado-Gado_',dan '_Sate_'.
 
 ## Pre Processing & Modelling 
+**A. CNN MODEL** 📌
+
+**Preprocessing**
+1. ImageDataGenerator
+   
+Berfungsi untuk menghasilkan batch gambar dengan preprocessing (normalisasi atau augmentasi) yang diterapkan secara langsung ke gambar selama pelatihan.
+
+2. Rescale
+
+Membagi setiap nilai piksel dengan 255, sehingga nilai piksel yang awalnya berada di rentang [0, 255] menjadi [0, 1]. Rescale penting karena model deep learning bekerja lebih baik dengan data yang ternormalisasi, mengurangi sensitivitas terhadap nilai besar.
+
+**Augmentasi** 
+
+- rotation_range=30      : Rotasi gambar secara acak dalam rentang 0 hingga 30 derajat.
+
+- width_shift_range=0.2 dan height_shift_range=0.2: Perpindahan gambar secara horizontal atau vertikal sebesar 20% dari dimensi gambar.
+
+- shear_range=0.2         : Transformasi shear pada gambar sebesar 20%.
+Berguna untuk menambah variasi pada dataset.
+
+- zoom_range=0.2            :Zoom in atau zoom out gambar hingga 20%.
+Membantu model menangani objek dengan ukuran berbeda.
+
+- horizontal_flip=True      : Membalik gambar secara horizontal.
+Cocok untuk dataset di mana orientasi horizontal objek dapat bervariasi (misalnya, wajah menghadap kiri/kanan).
+
+- fill_mode='nearest'         : Mengisi area kosong akibat transformasi (rotasi, shift) dengan nilai piksel terdekat.
+
+ **Modelling**
+ 
+ Hasil dari modelling CNN adalah sebagai berikut :
+ 
+ ![image](https://github.com/user-attachments/assets/ee43ed91-844d-4043-8fe2-967f10b27b0f)
+
+**Model Evaluation**
+
+Berikut adalah plot akurasi dan loss dengan jumlah 50 Epoch : 
+
+![Screenshot 2024-12-26 060605](https://github.com/user-attachments/assets/e14bda45-1665-4abb-b8d7-035e0d5c014c)
+
+Akurasi pelatihan meningkat secara konsisten dari sekitar 50% hingga mendekati 90% seiring bertambahnya epoch, menunjukkan bahwa model berhasil belajar dari data pelatihan, sementara akurasi validasi, meskipun fluktuatif, secara umum meningkat dari sekitar 70% hingga mendekati 89% dan tetap mengikuti tren akurasi pelatihan, tanpa tanda overfitting yang signifikan karena kedua garis akurasi berada dalam kisaran yang hampir sama sepanjang proses pelatihan.
+
+
+![image](https://github.com/user-attachments/assets/abbc1e7f-1149-4af2-af99-4c3077c38c81)
+
+Pada grafik ini, loss pelatihan menurun secara konsisten dari sekitar 1.2 hingga mendekati 0.3, menunjukkan bahwa model semakin baik dalam meminimalkan kesalahan selama pelatihan, sementara loss validasi juga menurun secara umum dari sekitar 1.0 hingga mendekati 0.3 dengan fluktuasi kecil, menunjukkan bahwa model memiliki generalisasi yang baik tanpa tanda overfitting yang signifikan karena kedua nilai loss tetap berada pada tren yang serupa sepanjang proses pelatihan.
+
+![Screenshot 2024-12-26 061333](https://github.com/user-attachments/assets/9dfede24-4a2d-4760-9bcc-5a2d65e31eb0)
+
+
+Berdasarkan confusion matrik tersebu, terlihat bahwa sebanyak 62 kelas Gado diprediksi sebagai sate dan hanya 3 prediksi benar dari kelas gudeg yang diprediksi sebagai gudeg.
+
+![image](https://github.com/user-attachments/assets/80eb7010-f254-4f83-a2f2-546d8c699f29)
+
+Model memiliki akurasi keseluruhan sebesar 23%, dengan performa terbaik pada kelas **rendang** (precision, recall, dan f1-score sekitar 0.24-0.25) dan performa terburuk pada kelas **gudeg** (precision 0.08, recall 0.06, dan f1-score 0.07), menunjukkan kesulitan model dalam mengenali kelas minoritas. Rata-rata makro (0.20) dan rata-rata berbobot (0.22-0.23) mencerminkan performa buruk secara keseluruhan, terutama karena ketidakseimbangan data dan fitur model yang belum optimal.
+
+
+**B. MobileNet Model** 📌
+
+**Preprocessing**
+
+1. rescale=1./255:
+   
+Ini adalah langkah preprocessing untuk menormalkan nilai piksel gambar dari rentang [0, 255] menjadi [0, 1]. Hal ini membantu model konvergen lebih cepat selama pelatihan.
+
+2. target_size=(224, 224):
+   
+Mengubah ukuran gambar menjadi resolusi tertentu (224x224) agar sesuai dengan input yang diharapkan oleh arsitektur MobileNet.
+
+3. class_mode='categorical':
+   
+Menentukan format label sebagai kategori (one-hot encoding) agar sesuai dengan output model yang bekerja untuk klasifikasi multi-kelas.
+
+**Augmentasi**
+
+1. rotation_range=20:
+Memutar gambar secara acak hingga 20 derajat.
+
+2. width_shift_range=0.2:
+Menggeser gambar secara horizontal hingga 20% dari lebar gambar.
+
+4. height_shift_range=0.2:
+Menggeser gambar secara vertikal hingga 20% dari tinggi gambar.
+
+**Modelling**
+
+ Hasil dari modelling MobileNet adalah sebagai berikut :
+
+ ![image](https://github.com/user-attachments/assets/5c5fb7a6-4226-47c2-98a8-f1af1eb5fec9)
+
+
+Berikut plot akurasi dan loss : 
+
+![image](https://github.com/user-attachments/assets/e9c5b9ff-f492-44b1-9fa8-0b29ad06f3b7)
+
+Dari grafik ini, terlihat bahwa loss training menurun secara konsisten, sementara loss validasi lebih fluktuatif, menunjukkan kemungkinan overfitting, di mana model terlalu terfokus pada data training. Hal ini juga didukung oleh grafik akurasi, di mana akurasi training terus meningkat mendekati 100%, sedangkan akurasi validasi lebih bervariasi meskipun cenderung meningkat secara keseluruhan. Fluktuasi pada data validasi mencerminkan bahwa model mungkin kurang stabil dalam memgeneralisasi pola pada data yang belum pernah dilihat.
+
+
+![image](https://github.com/user-attachments/assets/8e967a53-bd38-4e0d-8137-914362715892)
+
+Confusion matrix ini menunjukkan performa model klasifikasi dalam mengklasifikasikan 5 kelas makanan tradisional Indonesia: bakso, gado, gudeg, rendang, dan sate. Dari matriks, terlihat bahwa model memiliki performa tinggi pada kelas bakso, rendang, dan sate dengan prediksi yang sangat akurat (213, 212, dan 211 benar prediksi). Namun, model menunjukkan kesulitan dalam mengklasifikasikan kelas gudeg, hanya menghasilkan 46 prediksi benar dan beberapa kesalahan klasifikasi ke kelas gado dan rendang. Kesalahan lain tampak minimal, menunjukkan bahwa model bekerja cukup baik secara keseluruhan, tetapi perlu perbaikan pada kelas gudeg untuk meningkatkan kinerja.
+
+
+![image](https://github.com/user-attachments/assets/a6d43cfd-0080-41e0-9aa5-5f5f5be50ae2)
+
+Hasil evaluasi model menunjukkan performa yang sangat baik dengan **akurasi keseluruhan sebesar 97%** pada 913 data uji. Setiap kelas memiliki nilai **precision**, **recall**, dan **f1-score** yang konsisten tinggi, berkisar antara 0.94 hingga 1.00. 
+
+- **Bakso** memiliki recall tertinggi (1.00), menunjukkan semua data bakso terdeteksi dengan benar.  
+- **Gudeg** memiliki jumlah data terkecil (47) tetapi tetap menunjukkan performa baik dengan f1-score 0.96.  
+- Kelas **gado-gado** sedikit kurang optimal dengan recall 0.94.  
+- Rata-rata makro dan berbobot menunjukkan bahwa model seimbang dalam menangani data, tanpa bias terhadap kelas tertentu.
+
+Secara keseluruhan, model ini sangat andal untuk klasifikasi makanan tradisional.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
