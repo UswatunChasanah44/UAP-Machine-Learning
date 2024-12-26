@@ -75,7 +75,9 @@ Berdasarkan confusion matrik tersebut, terlihat bahwa sebanyak 62 kelas Gado dip
 ![image](https://github.com/user-attachments/assets/7e42b5f8-0e6c-4208-b5fb-c5f573aa2938)
 
 
-Model memiliki akurasi keseluruhan sebesar 23%, dengan performa terbaik pada kelas **rendang** (precision, recall, dan f1-score sekitar 0.24-0.25) dan performa terburuk pada kelas **gudeg** (precision 0.08, recall 0.06, dan f1-score 0.07), menunjukkan kesulitan model dalam mengenali kelas minoritas. Rata-rata makro (0.20) dan rata-rata berbobot (0.22-0.23) mencerminkan performa buruk secara keseluruhan, terutama karena ketidakseimbangan data dan fitur model yang belum optimal.
+Model memiliki akurasi keseluruhan sebesar 23%, dengan performa terbaik pada kelas **rendang** (precision, recall, dan f1-score sekitar 0.24-0.25) dan performa terburuk pada kelas **gudeg** (precision 0.08, recall 0.06, dan f1-score 0.07), menunjukkan kesulitan model dalam mengenali kelas minoritas. Rata-rata makro (0.20) dan rata-rata berbobot (0.22-0.23) mencerminkan performa buruk secara keseluruhan, terutama karena ketidakseimbangan data dan fitur model yang belum optimal. 
+
+Source code dapat diakses di [CNN COLLAB](https://colab.research.google.com/drive/1RHOmJ603qH9bf3ur2-PoFTECrGSSrDYh?usp=sharing)
 
 
 **B. MobileNet Model** 📌
@@ -137,12 +139,20 @@ Hasil evaluasi model menunjukkan performa yang sangat baik dengan **akurasi kese
 
 Secara keseluruhan, model ini sangat andal untuk klasifikasi makanan tradisional.
 
+Link Collab dapat diakses di [MobileNet Collab](https://colab.research.google.com/drive/1dY7v2-vXL54LdlhmzbCIz8si30xKHfrU?usp=sharing) 
+
 ## Tampilan Web Klasifikasi 🌻
 
 ![image](https://github.com/user-attachments/assets/188e2324-341c-41ec-8335-11273bbbf41e)
 
 
 ![image](https://github.com/user-attachments/assets/e2362f48-ac41-409e-9c04-753ea932081b)
+
+
+## Author 🧑‍💻
+**Uswatun Chasanah**
+
+**202110370311274**
 
 
 
