@@ -1,6 +1,6 @@
 # Analisis Kinerja Model CNN dan MobileNet untuk Klasifikasi Citra Makanan Tradisional Nusantara 🥘🎉
 
-## Overview Project
+## Overview Project 🌻
 Project *klasifikasi makanan tradisional Indonesia* bertujuan untuk melestarikan kekayaan kuliner sebagai bagian dari warisan budaya, sekaligus mendukung digitalisasi dan pengembangan teknologi di bidang kuliner. Model ini membantu mendokumentasikan dan mengenali ragam makanan tradisional secara akurat, mempermudah akses informasi, serta mendukung promosi kuliner lokal dalam sektor pariwisata dan ekonomi, termasuk pemberdayaan UMKM. 
 
 *Dataset* yang digunakan dalam penelitian ini diambil dari website Kaggle dengan data awal sebanyak 90.000 data. Berikut ini link datasetnya [Dataset Makanan Tradisional Indonesia](https://www.kaggle.com/datasets/theresalusiana/indonesian-food).
@@ -18,7 +18,7 @@ Proyek ini menggunakan dua model klasifikasi gambar, yaitu:
    ![image](https://github.com/user-attachments/assets/dab24000-35eb-469e-8849-eb063d9b50f7)
    Dalam konteks klasifikasi makanan tradisional, MobileNet dapat digunakan untuk mengekstraksi fitur penting dari gambar makanan dengan cepat dan efektif. Arsitektur ini dirancang untuk berjalan lebih cepat dan menggunakan lebih sedikit sumber daya (seperti memori dan daya komputasi), sehingga cocok untuk aplikasi pada perangkat bergerak atau sistem dengan kemampuan terbatas.
 
-## Overview Dataset
+## Overview Dataset 🌻
 Dataset yang digunakan dalam klasifikasi terdiri dari 9.098 image dan telah terbagi ke dalam file train, validation, dan test. Terdapat 5 label yaitu '_Bakso_','_Gudeg_', '_Rendang_', '_Gado-Gado_',dan '_Sate_'.
 
 ## Pre Processing & Modelling 
@@ -115,12 +115,14 @@ Menggeser gambar secara vertikal hingga 20% dari tinggi gambar.
 
 Berikut plot akurasi dan loss : 
 
-![image](https://github.com/user-attachments/assets/e9c5b9ff-f492-44b1-9fa8-0b29ad06f3b7)
+![image](https://github.com/user-attachments/assets/b7b77cf9-0def-4be7-b967-80dc35ccf4e2)
+
 
 Dari grafik ini, terlihat bahwa loss training menurun secara konsisten, sementara loss validasi lebih fluktuatif, menunjukkan kemungkinan overfitting, di mana model terlalu terfokus pada data training. Hal ini juga didukung oleh grafik akurasi, di mana akurasi training terus meningkat mendekati 100%, sedangkan akurasi validasi lebih bervariasi meskipun cenderung meningkat secara keseluruhan. Fluktuasi pada data validasi mencerminkan bahwa model mungkin kurang stabil dalam memgeneralisasi pola pada data yang belum pernah dilihat.
 
 
-![image](https://github.com/user-attachments/assets/8e967a53-bd38-4e0d-8137-914362715892)
+![image](https://github.com/user-attachments/assets/4d62ef48-c91e-42c9-9c9f-4113ffa3697f)
+
 
 Confusion matrix ini menunjukkan performa model klasifikasi dalam mengklasifikasikan 5 kelas makanan tradisional Indonesia: bakso, gado, gudeg, rendang, dan sate. Dari matriks, terlihat bahwa model memiliki performa tinggi pada kelas bakso, rendang, dan sate dengan prediksi yang sangat akurat (213, 212, dan 211 benar prediksi). Namun, model menunjukkan kesulitan dalam mengklasifikasikan kelas gudeg, hanya menghasilkan 46 prediksi benar dan beberapa kesalahan klasifikasi ke kelas gado dan rendang. Kesalahan lain tampak minimal, menunjukkan bahwa model bekerja cukup baik secara keseluruhan, tetapi perlu perbaikan pada kelas gudeg untuk meningkatkan kinerja.
 
@@ -136,7 +138,7 @@ Hasil evaluasi model menunjukkan performa yang sangat baik dengan **akurasi kese
 
 Secara keseluruhan, model ini sangat andal untuk klasifikasi makanan tradisional.
 
-## Tampilan Web Klasifikasi
+## Tampilan Web Klasifikasi 🌻
 
 
 
