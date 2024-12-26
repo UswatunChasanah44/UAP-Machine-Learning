@@ -145,6 +145,8 @@ Link Collab dapat diakses di [MobileNet Collab](https://colab.research.google.co
 
 ![image](https://github.com/user-attachments/assets/e2362f48-ac41-409e-9c04-753ea932081b)
 
+[Live Demo](http://localhost:8501/)
+
 
 ## Author 🧑‍💻
 **Uswatun Chasanah**
