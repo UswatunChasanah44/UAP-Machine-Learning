@@ -141,6 +141,9 @@ Secara keseluruhan, model ini sangat andal untuk klasifikasi makanan tradisional
 
 Link Collab dapat diakses di [MobileNet Collab](https://colab.research.google.com/drive/1dY7v2-vXL54LdlhmzbCIz8si30xKHfrU?usp=sharing) 
 
+
+**Link model CNN dan MobileNet dapat dilihat disini** 👉 [Model h5](https://drive.google.com/drive/folders/112A0kvZ0j0RmSm08IwHgTVgzbI2Wam8j?usp=sharing)
+
 ## Tampilan Web Klasifikasi 🌻
 
 ![image](https://github.com/user-attachments/assets/188e2324-341c-41ec-8335-11273bbbf41e)
