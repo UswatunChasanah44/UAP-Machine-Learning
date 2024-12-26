@@ -64,18 +64,18 @@ Berikut adalah plot akurasi dan loss dengan jumlah 50 Epoch :
 ![image](https://github.com/user-attachments/assets/4dc1baec-29c1-4cc8-a22a-bad7c95c9f3d)
 
 
-Akurasi pelatihan meningkat secara konsisten dari sekitar 50% hingga mendekati 90% seiring bertambahnya epoch, menunjukkan bahwa model berhasil belajar dari data pelatihan, sementara akurasi validasi, meskipun fluktuatif, secara umum meningkat dari sekitar 70% hingga mendekati 89% dan tetap mengikuti tren akurasi pelatihan, tanpa tanda overfitting yang signifikan karena kedua garis akurasi berada dalam kisaran yang hampir sama sepanjang proses pelatihan.
+**Gambar pertama menunjukkan grafik "Loss Over Epochs**," di mana loss pada data training (garis biru) menurun secara konsisten, dan loss pada data validasi (garis oranye) juga menurun, meskipun sedikit fluktuatif, menunjukkan model semakin baik dalam meminimalkan kesalahan. **Gambar kedua adalah grafik "Accuracy Over Epochs,"** di mana akurasi training (garis biru) dan validasi (garis oranye) meningkat seiring bertambahnya epoch, hingga mencapai nilai yang stabil mendekati 90%. Hasil ini menunjukkan bahwa model memiliki performa yang baik tanpa indikasi overfitting yang signifikan.
 
 
 ![image](https://github.com/user-attachments/assets/99a95c17-2847-44d4-bc33-283b17f7429e)
 
 
-Berdasarkan confusion matrik tersebut, terlihat bahwa sebanyak 62 kelas Gado diprediksi sebagai sate dan hanya 3 prediksi benar dari kelas gudeg yang diprediksi sebagai gudeg.
+Dari matriks, terlihat bahwa model memiliki performa tinggi pada kelas rendang, bakso, sate, dan gado dengan prediksi yang sangat akurat (207, 200, 200 dan 201 benar prediksi). Namun, model menunjukkan kesulitan dalam mengklasifikasikan kelas gudeg, hanya menghasilkan 22 prediksi benar dan beberapa kesalahan klasifikasi ke kelas gado dan rendang. 
 
 ![image](https://github.com/user-attachments/assets/7e42b5f8-0e6c-4208-b5fb-c5f573aa2938)
 
 
-Model memiliki akurasi keseluruhan sebesar 23%, dengan performa terbaik pada kelas **rendang** (precision, recall, dan f1-score sekitar 0.24-0.25) dan performa terburuk pada kelas **gudeg** (precision 0.08, recall 0.06, dan f1-score 0.07), menunjukkan kesulitan model dalam mengenali kelas minoritas. Rata-rata makro (0.20) dan rata-rata berbobot (0.22-0.23) mencerminkan performa buruk secara keseluruhan, terutama karena ketidakseimbangan data dan fitur model yang belum optimal. 
+Model memiliki akurasi keseluruhan sebesar 91%, dengan performa terbaik pada kelas **rendang** (precision, recall, dan f1-score sekitar 0.90-0.93) dan performa terburuk pada kelas **gudeg** (precision 0.96, recall 0.47, dan f1-score 0.63), menunjukkan kesulitan model dalam mengenali kelas minoritas.
 
 Source code dapat diakses di [CNN COLLAB](https://colab.research.google.com/drive/1RHOmJ603qH9bf3ur2-PoFTECrGSSrDYh?usp=sharing)
 
@@ -119,25 +119,19 @@ Berikut plot akurasi dan loss :
 ![image](https://github.com/user-attachments/assets/b7b77cf9-0def-4be7-b967-80dc35ccf4e2)
 
 
-Dari grafik ini, terlihat bahwa loss training menurun secara konsisten, sementara loss validasi lebih fluktuatif, menunjukkan kemungkinan overfitting, di mana model terlalu terfokus pada data training. Hal ini juga didukung oleh grafik akurasi, di mana akurasi training terus meningkat mendekati 100%, sedangkan akurasi validasi lebih bervariasi meskipun cenderung meningkat secara keseluruhan. Fluktuasi pada data validasi mencerminkan bahwa model mungkin kurang stabil dalam memgeneralisasi pola pada data yang belum pernah dilihat.
+Grafik pertama menunjukkan "Loss Over Epochs," di mana loss pada data training (garis biru) tetap rendah dan stabil setelah beberapa epoch, sedangkan loss pada data validasi (garis oranye) lebih fluktuatif meskipun berada pada tingkat rendah. Grafik kedua menggambarkan "Accuracy Over Epochs," di mana akurasi training (garis biru) dengan cepat mencapai nilai tinggi mendekati 100% dan stabil, sedangkan akurasi validasi (garis oranye) fluktuatif tetapi secara keseluruhan tinggi dan konsisten. Performa ini menunjukkan bahwa model bekerja dengan baik pada data training dan validasi tanpa tanda-tanda overfitting yang jelas, meskipun fluktuasi pada data validasi dapat mengindikasikan ketidakkonsistenan kecil dalam generalisasi.
 
 
 ![image](https://github.com/user-attachments/assets/4d62ef48-c91e-42c9-9c9f-4113ffa3697f)
 
 
-Confusion matrix ini menunjukkan performa model klasifikasi dalam mengklasifikasikan 5 kelas makanan tradisional Indonesia: bakso, gado, gudeg, rendang, dan sate. Dari matriks, terlihat bahwa model memiliki performa tinggi pada kelas bakso, rendang, dan sate dengan prediksi yang sangat akurat (213, 212, dan 211 benar prediksi). Namun, model menunjukkan kesulitan dalam mengklasifikasikan kelas gudeg, hanya menghasilkan 46 prediksi benar dan beberapa kesalahan klasifikasi ke kelas gado dan rendang. Kesalahan lain tampak minimal, menunjukkan bahwa model bekerja cukup baik secara keseluruhan, tetapi perlu perbaikan pada kelas gudeg untuk meningkatkan kinerja.
+Confusion matrix ini menunjukkan performa model klasifikasi dalam mengklasifikasikan 5 kelas makanan tradisional Indonesia: bakso, gado, gudeg, rendang, dan sate. Dari matriks, terlihat bahwa model memiliki performa tinggi pada kelas dengan prediksi yang sangat akurat 217 benar prediksi. Namun, model menunjukkan kesulitan dalam mengklasifikasikan kelas gudeg, hanya menghasilkan 45 prediksi benar dan beberapa kesalahan klasifikasi ke kelas gado dan rendang. Kesalahan lain tampak minimal, menunjukkan bahwa model bekerja cukup baik secara keseluruhan, tetapi perlu perbaikan pada kelas gudeg untuk meningkatkan kinerja.
 
 
 ![image](https://github.com/user-attachments/assets/a6d43cfd-0080-41e0-9aa5-5f5f5be50ae2)
 
-Hasil evaluasi model menunjukkan performa yang sangat baik dengan **akurasi keseluruhan sebesar 97%** pada 913 data uji. Setiap kelas memiliki nilai **precision**, **recall**, dan **f1-score** yang konsisten tinggi, berkisar antara 0.94 hingga 1.00. 
+Hasil evaluasi model menunjukkan performa yang sangat baik dengan akurasi keseluruhan sebesar **96%**. Setiap kelas memiliki f1-score yang tinggi, berkisar antara **0.96 hingga 0.97**, menunjukkan kemampuan model dalam mengenali semua kelas dengan akurat. Precision dan recall juga seimbang di hampir semua kelas, meskipun ada sedikit fluktuasi, terutama pada kelas dengan jumlah data lebih sedikit seperti **gudeg**. Secara keseluruhan, model berhasil mengklasifikasikan data secara konsisten dan efektif.
 
-- **Bakso** memiliki recall tertinggi (1.00), menunjukkan semua data bakso terdeteksi dengan benar.  
-- **Gudeg** memiliki jumlah data terkecil (47) tetapi tetap menunjukkan performa baik dengan f1-score 0.96.  
-- Kelas **gado-gado** sedikit kurang optimal dengan recall 0.94.  
-- Rata-rata makro dan berbobot menunjukkan bahwa model seimbang dalam menangani data, tanpa bias terhadap kelas tertentu.
-
-Secara keseluruhan, model ini sangat andal untuk klasifikasi makanan tradisional.
 
 Link Collab dapat diakses di [MobileNet Collab](https://colab.research.google.com/drive/1dY7v2-vXL54LdlhmzbCIz8si30xKHfrU?usp=sharing) 
 
