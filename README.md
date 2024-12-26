@@ -54,27 +54,26 @@ Cocok untuk dataset di mana orientasi horizontal objek dapat bervariasi (misalny
  
  Hasil dari modelling CNN adalah sebagai berikut :
  
- ![image](https://github.com/user-attachments/assets/ee43ed91-844d-4043-8fe2-967f10b27b0f)
+ ![image](https://github.com/user-attachments/assets/b357cc69-266f-42f9-a0a4-7468b97a3254)
+
 
 **Model Evaluation**
 
 Berikut adalah plot akurasi dan loss dengan jumlah 50 Epoch : 
 
-![Screenshot 2024-12-26 060605](https://github.com/user-attachments/assets/e14bda45-1665-4abb-b8d7-035e0d5c014c)
+![image](https://github.com/user-attachments/assets/4dc1baec-29c1-4cc8-a22a-bad7c95c9f3d)
+
 
 Akurasi pelatihan meningkat secara konsisten dari sekitar 50% hingga mendekati 90% seiring bertambahnya epoch, menunjukkan bahwa model berhasil belajar dari data pelatihan, sementara akurasi validasi, meskipun fluktuatif, secara umum meningkat dari sekitar 70% hingga mendekati 89% dan tetap mengikuti tren akurasi pelatihan, tanpa tanda overfitting yang signifikan karena kedua garis akurasi berada dalam kisaran yang hampir sama sepanjang proses pelatihan.
 
 
-![image](https://github.com/user-attachments/assets/abbc1e7f-1149-4af2-af99-4c3077c38c81)
-
-Pada grafik ini, loss pelatihan menurun secara konsisten dari sekitar 1.2 hingga mendekati 0.3, menunjukkan bahwa model semakin baik dalam meminimalkan kesalahan selama pelatihan, sementara loss validasi juga menurun secara umum dari sekitar 1.0 hingga mendekati 0.3 dengan fluktuasi kecil, menunjukkan bahwa model memiliki generalisasi yang baik tanpa tanda overfitting yang signifikan karena kedua nilai loss tetap berada pada tren yang serupa sepanjang proses pelatihan.
-
-![Screenshot 2024-12-26 061333](https://github.com/user-attachments/assets/9dfede24-4a2d-4760-9bcc-5a2d65e31eb0)
+![image](https://github.com/user-attachments/assets/99a95c17-2847-44d4-bc33-283b17f7429e)
 
 
-Berdasarkan confusion matrik tersebu, terlihat bahwa sebanyak 62 kelas Gado diprediksi sebagai sate dan hanya 3 prediksi benar dari kelas gudeg yang diprediksi sebagai gudeg.
+Berdasarkan confusion matrik tersebut, terlihat bahwa sebanyak 62 kelas Gado diprediksi sebagai sate dan hanya 3 prediksi benar dari kelas gudeg yang diprediksi sebagai gudeg.
 
-![image](https://github.com/user-attachments/assets/80eb7010-f254-4f83-a2f2-546d8c699f29)
+![image](https://github.com/user-attachments/assets/7e42b5f8-0e6c-4208-b5fb-c5f573aa2938)
+
 
 Model memiliki akurasi keseluruhan sebesar 23%, dengan performa terbaik pada kelas **rendang** (precision, recall, dan f1-score sekitar 0.24-0.25) dan performa terburuk pada kelas **gudeg** (precision 0.08, recall 0.06, dan f1-score 0.07), menunjukkan kesulitan model dalam mengenali kelas minoritas. Rata-rata makro (0.20) dan rata-rata berbobot (0.22-0.23) mencerminkan performa buruk secara keseluruhan, terutama karena ketidakseimbangan data dan fitur model yang belum optimal.
 
